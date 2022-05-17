@@ -1,0 +1,29 @@
+
+canvas{
+  background: black;
+  
+}
+
+footer{
+  margin-top: 40px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+footer > label{
+  margin-right: 35px;
+  font-size: 25px;
+} 
+
+a{
+  text-decoration: none;
+}
+
+a:hover{
+  border-bottom: 2px solid;
+}
+
+a:active{
+  color: yellow;
+}
