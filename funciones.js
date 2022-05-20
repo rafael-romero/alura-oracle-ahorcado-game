@@ -19,3 +19,12 @@ function crearPalabraSecreta(){
    return palabrasDelJuego[numeroElegido];
 }
 
+const $btnIniciarJuego = document.querySelector("#iniciar-juego");
+$btnIniciarJuego.onclick = function(event){
+  event.preventDefault();
+  const palabraSecreta = crearPalabraSecreta();
+  dibujarGuionesPalabraSecreta(palabraSecreta);
+  
+  
+}
+
