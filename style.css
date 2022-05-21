@@ -26,3 +26,7 @@ a:hover{
 a:active{
   color: yellow;
 }
+
+.ocultar{
+  display: none;
+}
