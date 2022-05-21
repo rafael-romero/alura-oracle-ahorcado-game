@@ -1,30 +1,78 @@
-function dibujarGuionesPalabraSecreta(palabrasecreta){
-  const longitudDePalabraSecreta = palabrasecreta.length;
-  let guionesPalabraSecreta = ""; 
+function ocultarElemento(elemento){
+  document.querySelector(`#${elemento}`).classList.add("ocultar")
+}
 
-  pincel.font = "30px Arial";
-  pincel.fillStyle = "white";
-  pincel.textAlign = "center";
-  for(let i = 0; i < palabrasecreta.length; i++){
-    guionesPalabraSecreta += "_ ";
-  }
-  pincel.fillText(guionesPalabraSecreta, tablero.width/2, 385);
+function mostrarElemento(elemento){
+  document.querySelector(`#${elemento}`).classList.remove("ocultar")
 }
 
 
-const palabrasDelJuego = ["DEVOPS", "ALURA", "ORACLE", "JAVASCRIP", "HTML", "CSS", "JAVA", "PHYTON", "MYSQL", "CSHARP", "MONGODB", "RUBY", "TECLADO", "MOUSE", "MONITOR", "PARLANTE", "CPU", "GPU", "MEMORIA", "MOTHER", "RAM", "COOLER"];
+function inicializarVacioLetrasEquivocadas(){
+  const MAXIMO_DE_LETRAS_EQUIVOCADAS = 24;
+  for(let i = 0; i < MAXIMO_DE_LETRAS_EQUIVOCADAS; i++){
+    letrasEquivocadas.push(" ");
+  }
+}
 
+function ponerEspaciosVaciosEnPalabraFormadaPorElUsuario(){
+  for(let i = 0; i < palabraSecretaEnArray.length; i++){
+    palabraFormadaPorElUsuario.push(" ");
+  }
+}
+
+const palabrasDelJuego = ["DEVOPS", "ALURA", "ORACLE", "JAVASCRIPT", "HTML", "CSS", "JAVA", "PHYTON", "MYSQL", "CSHARP", "MONGODB", "RUBY", "TECLADO", "MOUSE", "MONITOR", "PARLANTE", "CPU", "GPU", "MEMORIA", "MOTHER", "RAM", "COOLER"];
 function crearPalabraSecreta(){
    let numeroElegido = Math.floor(Math.random() * palabrasDelJuego.length);
    return palabrasDelJuego[numeroElegido];
 }
 
+let palabraSecreta = "";
+let palabraSecretaEnArray = [];
+let palabraFormadaPorElUsuario =[];
+const letrasEquivocadas = [];
+const $btnAgregarNuevaPalabra = document.querySelector("#agregar-nueva-palabra");
 const $btnIniciarJuego = document.querySelector("#iniciar-juego");
 $btnIniciarJuego.onclick = function(event){
   event.preventDefault();
-  const palabraSecreta = crearPalabraSecreta();
+  palabraSecreta = crearPalabraSecreta();
+  palabraSecretaEnArray = palabraSecreta.split("");
   dibujarGuionesPalabraSecreta(palabraSecreta);
-  
-  
+  ponerEspaciosVaciosEnPalabraFormadaPorElUsuario();
+  inicializarVacioLetrasEquivocadas();
+  ocultarElemento("iniciar-juego");
+  ocultarElemento("agregar-nueva-palabra");
 }
+
+function verificarQueNoSeaLetraRepetida(letraPresionada){
+  if((letrasEquivocadas.includes(letraPresionada)) || (palabraFormadaPorElUsuario.includes(letraPresionada))){
+    alert("Esta letra esta repetida, eliga otra por favor!!!");
+    return false;
+  }
+  return true;
+}
+
+function verificarSiLaLetraCoincide(letrapresionada){
+  if(palabraSecreta.includes(`${letrapresionada}`)){
+    dibujarLetraCorrecta(letrapresionada);  
+    
+  }else{
+    dibujarLetraIncorrecta(letrapresionada);
+    dibujarAhorcado();
+  }  
+}
+
+const letrasAceptadasEnMayusculas = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+document.addEventListener("keydown", function(event){
+  const letraPresionada = event.key;
+  if(letrasAceptadasEnMayusculas.includes(`${letraPresionada}`)){
+    if(verificarQueNoSeaLetraRepetida(letraPresionada)){
+      verificarSiLaLetraCoincide(letraPresionada);
+      if(palabraFormadaPorElUsuario == palabraSecretaEnArray){
+        alert("Felicitaciones Ganaste!!!")
+      }
+    }
+  }else{
+    alert("Unicamente se aceptan letras mayusculas");
+  }
+}, false);
 
