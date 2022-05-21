@@ -2,6 +2,45 @@ let tablero = document.querySelector("#tablero");
 let pincel = tablero.getContext("2d");
 let partesDelAhorcado = 0;
 
+function dibujarLetraIncorrecta(letrapresionada){
+  for(let i = 0; i < letrasEquivocadas.length; i++){
+    if(letrasEquivocadas[i] === " "){
+      letrasEquivocadas[i] = letrapresionada;
+      i = 100;
+    }
+  }
+  let palabraAImprimir = letrasEquivocadas.join("");
+  pincel.font = "30px Lucida Console";
+  pincel.fillStyle = "red";
+  pincel.textAlign = "center";
+  pincel.fillText(palabraAImprimir, tablero.width/2, 40);
+}
+
+function dibujarLetraCorrecta(letrapresionada){
+  for(let i = 0; i < palabraSecretaEnArray.length; i++){
+    if(letrapresionada === palabraSecretaEnArray[i]){
+      palabraFormadaPorElUsuario[i] = letrapresionada;
+    }   
+  }
+  let palabraAImprimir = palabraFormadaPorElUsuario.join(" ");
+  pincel.font = "30px Lucida Console";
+  pincel.fillStyle = "white";
+  pincel.textAlign = "center";
+  pincel.fillText(palabraAImprimir, ((tablero.width-20)/2), 375);
+}
+
+
+function dibujarGuionesPalabraSecreta(palabrasecreta){
+  let guionesPalabraSecreta = ""; 
+
+  pincel.font = "30px Lucida Console";
+  pincel.fillStyle = "white";
+  pincel.textAlign = "center";
+  for(let i = 0; i < palabrasecreta.length; i++){
+    guionesPalabraSecreta += "_ ";
+  }
+  pincel.fillText(guionesPalabraSecreta, tablero.width/2, 385);
+}
 
 function dibujarPieDerechoDelAhorcado(){
   pincel.beginPath();
@@ -63,39 +102,32 @@ function dibujarBaseParaElAhorcado(){
   pincel.stroke();
 }
 
-
 function dibujarAhorcado(){
   pincel.strokeStyle = "white";
   pincel.lineWidth = 5;
-  //partesDelAhorcado = partesDelAhorcado + 1; esta es la primera linea correcta y NO la que esta debajo
-  partesDelAhorcado = 1;
-  if(partesDelAhorcado === 1 ){
+  partesDelAhorcado = partesDelAhorcado + 1;
+  if(partesDelAhorcado === 1){
     dibujarBaseParaElAhorcado();
   }
-  partesDelAhorcado = 2;
   if(partesDelAhorcado === 2){
     dibujarCabezaDelAhorcado();
   }
-  partesDelAhorcado = 3;
   if(partesDelAhorcado === 3){
     dibujarTroncoDelAhorcado();
   }
-  partesDelAhorcado = 4;
   if(partesDelAhorcado === 4){
     dibujarBrazoIzquierdoDelAhorcado();
   }
-  partesDelAhorcado = 5;
   if(partesDelAhorcado === 5){
     dibujarBrazoDerechoDelAhorcado();
   }
-  partesDelAhorcado = 6;
   if(partesDelAhorcado === 6){
     dibujarPieIzquierdoDelAhorcado();
   }
-  partesDelAhorcado = 7;
   if(partesDelAhorcado === 7){
     dibujarPieDerechoDelAhorcado();
+    //ACA HAY QUE PONER UN SETTIMEOUT PARA QUE DIBUJE ANTES DE MOSTRAR QUE PERDIMOS
+    alert("Perdiste, mala suerte!!!");
   }
 }
 
-dibujarAhorcado();
