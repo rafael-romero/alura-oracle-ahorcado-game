@@ -1,9 +1,9 @@
 function ocultarElemento(elemento){
-  document.querySelector(`#${elemento}`).classList.add("ocultar")
+  elemento.classList.add("oculto");
 }
 
 function mostrarElemento(elemento){
-  document.querySelector(`#${elemento}`).classList.remove("ocultar")
+  elemento.classList.remove("oculto");
 }
 
 
@@ -39,8 +39,8 @@ $btnIniciarJuego.onclick = function(event){
   dibujarGuionesPalabraSecreta(palabraSecreta);
   ponerEspaciosVaciosEnPalabraFormadaPorElUsuario();
   inicializarVacioLetrasEquivocadas();
-  ocultarElemento("iniciar-juego");
-  ocultarElemento("agregar-nueva-palabra");
+  ocultarElemento($contenedorBotonesIniciarJuego);
+  mostrarElemento($contenedorBotonesNuevoJuegoDesistir);
 }
 
 function verificarQueNoSeaLetraRepetida(letraPresionada){
@@ -54,7 +54,6 @@ function verificarQueNoSeaLetraRepetida(letraPresionada){
 function verificarSiLaLetraCoincide(letrapresionada){
   if(palabraSecreta.includes(`${letrapresionada}`)){
     dibujarLetraCorrecta(letrapresionada);  
-    
   }else{
     dibujarLetraIncorrecta(letrapresionada);
     dibujarAhorcado();
