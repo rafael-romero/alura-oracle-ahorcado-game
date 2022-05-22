@@ -3,6 +3,16 @@ canvas{
   background: black;
 }
 
+
+#modal::backdrop{
+  background-color: rgba(0, 0, 0, .55);
+}
+
+#modal{
+  max-width: 300px;
+  max-height: 200px;
+}
+
 footer{
   margin-top: 40px;
   margin-bottom: 25px;
