@@ -126,8 +126,7 @@ function dibujarAhorcado(){
   }
   if(partesDelAhorcado === 7){
     dibujarPieDerechoDelAhorcado();
-    //ACA HAY QUE PONER UN SETTIMEOUT PARA QUE DIBUJE ANTES DE MOSTRAR QUE PERDIMOS
-    alert("Perdiste, mala suerte!!!");
+    setTimeout(finalizarJuego, 500);
   }
 }
 
