@@ -9,6 +9,13 @@ function dibujarFinDelJuego(){
   pincel.fillText("Fin Del Juego!!!", (tablero.width/2)+50, 300);
 }
 
+function dibujarMensajeGanaste(){
+  pincel.font = "45px Helvetica";
+  pincel.fillStyle = "green";
+  pincel.textAlign = "center";
+  pincel.fillText("Ganaste, Felicidades!!!", (tablero.width/2)+50, 125);
+}
+
 function dibujarLetraIncorrecta(letrapresionada){
   for(let i = 0; i < letrasEquivocadas.length; i++){
     if(letrasEquivocadas[i] === " "){
