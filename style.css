@@ -37,6 +37,10 @@ a:active{
   color: yellow;
 }
 
-.ocultar{
+.oculto{
   display: none;
+}
+
+.error{
+  border: solid red 2px;
 }
