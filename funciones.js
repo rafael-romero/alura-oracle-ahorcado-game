@@ -31,8 +31,8 @@ function crearPalabraSecreta(){
 let palabraSecreta = "";
 let palabraSecretaEnArray = [];
 let palabraFormadaPorElUsuario =[];
-const letrasEquivocadas = [];
-const $btnAgregarNuevaPalabra = document.querySelector("#agregar-nueva-palabra");
+let letrasEquivocadas = [];
+const $contenedorBotonesIniciarJuego = document.querySelector("#contenedor-iniciar-juego");
 const $btnIniciarJuego = document.querySelector("#iniciar-juego");
 $btnIniciarJuego.onclick = function(event){
   event.preventDefault();
@@ -80,12 +80,101 @@ document.addEventListener("keydown", function(event){
   }
 }, false);
 
+function finalizarJuego(){
+  dibujarFinDelJuego();
+  //evitar que se puedan apretar teclas document.addEventListener("keydown", ()=>{""});
+}
+
+function validarPalabra(palabra){
+  if(palabra.length > 9){
+    return "La palabra ingresada tiene mas de 8 letras";
+  }
+  if(!(/^[A-Z]+$/).test(palabra)){
+    return "Solo se admiten palabras en mayusculas, sin numeros, acentos, ni caracteres especiales!!!"
+  }
+  return "";
+}
+
+const $mensajesAlUsuario = document.querySelector("#mensajes-al-usuario");
+
+function eliminarError(){
+  $mensajesAlUsuario.textContent = "";
+  $mensajesAlUsuario.classList.remove("error");
+  ocultarElemento($mensajesAlUsuario);
+}
+
+function mostrarError(error){
+  $mensajesAlUsuario.textContent = error;
+  $mensajesAlUsuario.classList.add("error");
+  mostrarElemento($mensajesAlUsuario);
+}
+
 function mostrarMensaje(mensaje){
   document.querySelector("#mensaje-de-modal").textContent = mensaje;
   $modal.showModal();
+}
+
+const $contenedorBotonesAgregarPalabra = document.querySelector("#contenedor-agregar-palabra");
+const $inputPalabraSecretaAAgregar = document.querySelector("#palabra-secreta-a-agregar");
+const $btnGuardarYEmpezar = document.querySelector("#guardar-y-empezar")
+$btnGuardarYEmpezar.onclick = function(event){
+  event.preventDefault();
+  const error = validarPalabra($inputPalabraSecretaAAgregar.value);
+  if(error.length > 0){
+    mostrarError(error);
+  }else{
+    eliminarError();
+    palabrasDelJuego.push($inputPalabraSecretaAAgregar.value);
+    const mensaje = "Su palabra a sido agregada!";
+    mostrarMensaje(mensaje);
+    ocultarElemento($contenedorBotonesAgregarPalabra);
+  }
+}
+
 const $btnCerrarModal = document.querySelector("#btn-cerrar-modal");
 const $modal = document.querySelector("#modal");
 $btnCerrarModal.addEventListener("click",() => {
   $modal.close();
 });
  
+
+const $btnCancelarNuevaPalabra = document.querySelector("#cancelar-nueva-palabra");
+$btnCancelarNuevaPalabra.onclick = function(event){
+  event.preventDefault();
+  const mensaje = "No agrego ninguna palabra!";
+  mostrarMensaje(mensaje);
+  ocultarElemento($contenedorBotonesAgregarPalabra);
+}
+
+const $btnAgregarNuevaPalabra = document.querySelector("#agregar-nueva-palabra");
+$btnAgregarNuevaPalabra.onclick = function(event){
+  event.preventDefault();
+  mostrarElemento($contenedorBotonesAgregarPalabra);
+}
+
+function reiniciarJuego(){
+  tablero.width = tablero.width;
+  palabraSecreta = "";
+  palabraSecretaEnArray = [];
+  palabraFormadaPorElUsuario =[];
+  letrasEquivocadas = [];
+  partesDelAhorcado = 0;
+}
+
+const $btnNuevoJuego = document.querySelector("#nuevo-juego");
+$btnNuevoJuego.onclick = function(event){
+  event.preventDefault();
+  reiniciarJuego();
+  $btnIniciarJuego.click();
+}
+
+
+const $contenedorBotonesNuevoJuegoDesistir = document.querySelector("#contenedor-nuevo-juego-desistir");
+const $btnDesistir = document.querySelector("#desistir");
+$btnDesistir.onclick = function(event){
+  event.preventDefault();
+  reiniciarJuego();
+  mostrarElemento($contenedorBotonesIniciarJuego);
+  ocultarElemento($contenedorBotonesNuevoJuegoDesistir);
+}
+
