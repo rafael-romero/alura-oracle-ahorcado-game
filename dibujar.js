@@ -11,9 +11,13 @@ function dibujarLetraIncorrecta(letrapresionada){
   }
   let palabraAImprimir = letrasEquivocadas.join("");
   pincel.font = "30px Lucida Console";
+  pincel.fillStyle = "coral";
+  pincel.textAlign = "center";
+  pincel.fillText(palabraAImprimir, tablero.width/2, 70);
+  pincel.font = "30px Lucida Console";
   pincel.fillStyle = "red";
   pincel.textAlign = "center";
-  pincel.fillText(palabraAImprimir, tablero.width/2, 40);
+  pincel.fillText("Letras Equivocadas", tablero.width/2, 30);
 }
 
 function dibujarLetraCorrecta(letrapresionada){
