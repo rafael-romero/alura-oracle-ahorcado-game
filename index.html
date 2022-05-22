@@ -11,14 +11,36 @@
 
 <body>
   <header>
+    <h1>Juego del Ahorcado</h1>
     <img src="img/alura-logo.png" alt="logo de Alura">
   </header>
   <main>
     <canvas id="tablero" width="800" height="600" style="border:3px solid #dddddd;"></canvas>
-    <input type="button" id="iniciar-juego" value="Iniciar Juego">
-    <input type="button" id="agregar-nueva-palabra" value="Agregar una nueva palabra" onclick="location.href='agregar-palabra.html'">
-    <input type="button" id="nuevo-juego" value="Nuevo Juego">
-    <input type="button" id="desistir" value="Desistir">
+    <div id="contenedor-iniciar-juego">
+      <input type="button" id="iniciar-juego" value="Iniciar Juego">
+      <input type="button" id="agregar-nueva-palabra" value="Agregar una nueva palabra">
+    </div>
+    <div id="contenedor-nuevo-juego-desistir" class="oculto">
+      <input type="button" id="nuevo-juego" value="Nuevo Juego">
+      <input type="button" id="desistir" value="Desistir">
+    </div>
+
+    <div id="contenedor-agregar-palabra" class="oculto">
+      <input type="text" placeholder="Ingrese una Palabra" id="palabra-secreta-a-agregar">
+      <span>&#8252 Maximo de 8 letras</span>
+      <input type="button" id="guardar-y-empezar" value="Guardar y Empezar" >
+      <input type="button" id="cancelar-nueva-palabra" value="Cancelar" >
+    </div>
+
+    <span id="mensajes-al-usuario" class="oculto"></span>
+
+    <dialog id="modal">
+      <img src="img/icono-de-atencion.png" alt="icono-de-atencion" width="30" height="30">
+      <p id="mensaje-de-modal"></p>
+      <button id="btn-cerrar-modal">OK</button>
+    </dialog>
+
+
   </main>
   
   <footer>
@@ -37,6 +59,7 @@
   </footer>
   <script src='dibujar.js'></script>
   <script src="funciones.js"></script>
+  
 </body>
 </html>
 
