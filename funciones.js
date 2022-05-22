@@ -22,8 +22,10 @@ function ponerEspaciosVaciosEnPalabraFormadaPorElUsuario(){
 
 const palabrasDelJuego = ["DEVOPS", "ALURA", "ORACLE", "JAVASCRIPT", "HTML", "CSS", "JAVA", "PHYTON", "MYSQL", "CSHARP", "MONGODB", "RUBY", "TECLADO", "MOUSE", "MONITOR", "PARLANTE", "CPU", "GPU", "MEMORIA", "MOTHER", "RAM", "COOLER"];
 function crearPalabraSecreta(){
-   let numeroElegido = Math.floor(Math.random() * palabrasDelJuego.length);
-   return palabrasDelJuego[numeroElegido];
+   const numeroElegido = Math.floor(Math.random() * palabrasDelJuego.length);
+   const palabraSecretaElegida = palabrasDelJuego[numeroElegido];
+   palabrasDelJuego.splice(numeroElegido, 1); 
+   return palabraSecretaElegida;
 }
 
 let palabraSecreta = "";
