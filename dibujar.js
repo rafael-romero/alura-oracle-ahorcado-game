@@ -2,6 +2,13 @@ let tablero = document.querySelector("#tablero");
 let pincel = tablero.getContext("2d");
 let partesDelAhorcado = 0;
 
+function dibujarFinDelJuego(){
+  pincel.font = "45px Helvetica";
+  pincel.fillStyle = "red";
+  pincel.textAlign = "center";
+  pincel.fillText("Fin Del Juego!!!", (tablero.width/2)+50, 300);
+}
+
 function dibujarLetraIncorrecta(letrapresionada){
   for(let i = 0; i < letrasEquivocadas.length; i++){
     if(letrasEquivocadas[i] === " "){
