@@ -47,7 +47,8 @@ $btnIniciarJuego.onclick = function(event){
 
 function verificarQueNoSeaLetraRepetida(letraPresionada){
   if((letrasEquivocadas.includes(letraPresionada)) || (palabraFormadaPorElUsuario.includes(letraPresionada))){
-    alert("Esta letra esta repetida, eliga otra por favor!!!");
+    const mensaje = "Esta letra esta repetida, eliga otra por favor!!!";
+    mostrarMensaje(mensaje);
     return false;
   }
   return true;
@@ -73,7 +74,17 @@ document.addEventListener("keydown", function(event){
       }
     }
   }else{
-    alert("Unicamente se aceptan letras mayusculas");
+    const mensaje = "Unicamente se aceptan letras mayusculas";
+    mostrarMensaje(mensaje);
   }
 }, false);
 
+function mostrarMensaje(mensaje){
+  document.querySelector("#mensaje-de-modal").textContent = mensaje;
+  $modal.showModal();
+const $btnCerrarModal = document.querySelector("#btn-cerrar-modal");
+const $modal = document.querySelector("#modal");
+$btnCerrarModal.addEventListener("click",() => {
+  $modal.close();
+});
+ 
