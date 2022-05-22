@@ -69,8 +69,9 @@ document.addEventListener("keydown", function(event){
   if(letrasAceptadasEnMayusculas.includes(`${letraPresionada}`)){
     if(verificarQueNoSeaLetraRepetida(letraPresionada)){
       verificarSiLaLetraCoincide(letraPresionada);
-      if(palabraFormadaPorElUsuario == palabraSecretaEnArray){
-        alert("Felicitaciones Ganaste!!!")
+      if(JSON.stringify(palabraFormadaPorElUsuario) === JSON.stringify(palabraSecretaEnArray)){
+        dibujarMensajeGanaste();
+        finalizarJuego();
       }
     }
   }else{
