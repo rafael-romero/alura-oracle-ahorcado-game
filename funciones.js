@@ -27,6 +27,8 @@ function crearPalabraSecreta(){
    return palabraSecretaElegida;
 }
 
+const $tablero = document.querySelector("#tablero");
+
 let palabraSecreta = "";
 let palabraSecretaEnArray = [];
 let palabraFormadaPorElUsuario =[];
@@ -37,7 +39,9 @@ $btnIniciarJuego.onclick = function(event){
   event.preventDefault();
   palabraSecreta = crearPalabraSecreta();
   palabraSecretaEnArray = palabraSecreta.split("");
+  mostrarElemento($tablero);
   dibujarGuionesPalabraSecreta(palabraSecreta);
+  dibujarAhorcado();
   ponerEspaciosVaciosEnPalabraFormadaPorElUsuario();
   inicializarVacioLetrasEquivocadas();
   ocultarElemento($contenedorBotonesIniciarJuego);
