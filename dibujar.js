@@ -174,7 +174,7 @@ function dibujarAhorcado(){
   if(partesDelAhorcado === 7){
     dibujarPieDerechoDelAhorcado();
     dibujarCaraAhorcado();
-    $sonidoPerdedor.play();
+    setTimeout(()=>{$sonidoPerdedor.play()}, MEDIO_SEGUNDO_EN_MILISEGUNDOS * 1.5);
     setTimeout(dibujarFinDelJuego(), MEDIO_SEGUNDO_EN_MILISEGUNDOS);
     dibujarMensajePerdiste();
   }
