@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="reset.css">
   <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
 </head>
-
 <body>
   <header>
     <h1>Juego del Ahorcado</h1>
@@ -39,8 +38,12 @@
       <p id="mensaje-de-modal"></p>
       <button id="btn-cerrar-modal">OK</button>
     </dialog>
-
-
+    <audio src="sounds/sonido_Sorpresa.mp4" id="sonido-sorpresa"></audio>
+    <audio src="sounds/sonido_presionar_tecla.mp4" id="sonido-presionar-tecla"></audio>
+    <audio src="sounds/Sonido_Falla _Error.mp4" id="sonido-incorrecto"></audio>
+    <audio src="sounds/sonido_correcto.mp4" id="sonido-correcto"></audio>
+    <audio src="sounds/sonido_perdido.mp4" id="sonido-derrota"></audio>
+    <audio src="sounds/sonido_victoria.mp4" id="sonido-ganador"></audio>
   </main>
   
   <footer>
@@ -59,7 +62,6 @@
   </footer>
   <script src='dibujar.js'></script>
   <script src="funciones.js"></script>
-  
 </body>
 </html>
 
