@@ -83,7 +83,8 @@ document.addEventListener("keydown", function(event){
 
 
 function validarPalabra(palabra){
-  if(palabra.length > 9){
+  const NUMERO_DE_LETRAS_NO_PERMITIDO = 9;
+  if(palabra.length > NUMERO_DE_LETRAS_NO_PERMITIDO){
     return "La palabra ingresada tiene mas de 8 letras";
   }
   if(!(/^[A-Z]+$/).test(palabra)){
