@@ -9,6 +9,13 @@ function dibujarFinDelJuego(){
   pincel.fillText("Fin Del Juego!!!", (tablero.width/2)+50, 300);
 }
 
+function dibujarMensajePerdiste(){
+  pincel.font = "45px Helvetica";
+  pincel.fillStyle = "red";
+  pincel.textAlign = "center";
+  pincel.fillText("Perdiste!!!", (tablero.width/2)+50, 125);
+}
+
 function dibujarMensajeGanaste(){
   pincel.font = "45px Helvetica";
   pincel.fillStyle = "green";
