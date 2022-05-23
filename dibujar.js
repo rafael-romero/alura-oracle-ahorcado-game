@@ -2,6 +2,26 @@ let tablero = document.querySelector("#tablero");
 let pincel = tablero.getContext("2d");
 let partesDelAhorcado = 0;
 
+function dibujarCaraAhorcado(){
+  pincel.lineWidth = 2;
+  pincel.beginPath();
+  //OJO IZQUIERDO
+  pincel.moveTo(185, 140);
+  pincel.lineTo(195, 150);
+  pincel.moveTo(185, 150);
+  pincel.lineTo(195, 140);
+  //OJO DERECHO
+  pincel.moveTo(205, 140);
+  pincel.lineTo(215, 150);
+  pincel.moveTo(205, 150);
+  pincel.lineTo(215, 140);
+  //BOCA TRISTE
+  pincel.lineWidth = 3;
+  pincel.moveTo(190, 170);
+  pincel.bezierCurveTo(190, 160, 210, 160, 210, 170);
+  pincel.stroke();
+}
+
 function dibujarFinDelJuego(){
   pincel.font = "45px Helvetica";
   pincel.fillStyle = "red";
@@ -58,7 +78,6 @@ function dibujarLetraCorrecta(letrapresionada){
 
 function dibujarGuionesPalabraSecreta(palabrasecreta){
   let guionesPalabraSecreta = ""; 
-
   pincel.font = "30px Lucida Console";
   pincel.fillStyle = "white";
   pincel.textAlign = "center";
@@ -154,7 +173,10 @@ function dibujarAhorcado(){
   }
   if(partesDelAhorcado === 7){
     dibujarPieDerechoDelAhorcado();
+    dibujarCaraAhorcado();
     $sonidoPerdedor.play();
+    setTimeout(dibujarFinDelJuego(), MEDIO_SEGUNDO_EN_MILISEGUNDOS);
+    dibujarMensajePerdiste();
   }
 }
 
