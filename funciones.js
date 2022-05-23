@@ -71,8 +71,8 @@ function verificarSiLaLetraCoincide(letrapresionada){
 const $sonidoGanador = document.querySelector("#sonido-ganador");
 const $sonidoTeclaPresionada = document.querySelector("#sonido-presionar-tecla");
 const letrasAceptadasEnMayusculas = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-document.addEventListener("keydown", function(event){
-  const letraPresionada = event.key;
+const apretarTecla = function(e){
+  const letraPresionada = e.key;
   $sonidoTeclaPresionada.play();
   if(letrasAceptadasEnMayusculas.includes(`${letraPresionada}`)){
     if(verificarQueNoSeaLetraRepetida(letraPresionada)){
@@ -89,7 +89,7 @@ document.addEventListener("keydown", function(event){
     mostrarMensaje(mensaje);
     $sonidoSorpresa.play();
   }
-}, false);
+};
 
 function habilitarTeclado(){
   document.addEventListener("keydown", apretarTecla);
