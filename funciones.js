@@ -68,7 +68,7 @@ function verificarSiLaLetraCoincide(letrapresionada){
   }else{
     dibujarLetraIncorrecta(letrapresionada);
     dibujarAhorcado();
-    $sonidoIncorrecto();
+    $sonidoIncorrecto.play();
   }  
 }
 
