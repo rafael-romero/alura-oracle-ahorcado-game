@@ -91,7 +91,13 @@ document.addEventListener("keydown", function(event){
   }
 }, false);
 
+function habilitarTeclado(){
+  document.addEventListener("keydown", apretarTecla);
+}
 
+function deshabilitarTeclado(){
+  document.removeEventListener("keydown", apretarTecla);
+}
 
 function validarPalabra(palabra){
   const NUMERO_DE_LETRAS_NO_PERMITIDO = 9;
