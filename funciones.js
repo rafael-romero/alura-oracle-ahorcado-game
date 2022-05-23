@@ -79,7 +79,7 @@ document.addEventListener("keydown", function(event){
       verificarSiLaLetraCoincide(letraPresionada);
       if(JSON.stringify(palabraFormadaPorElUsuario) === JSON.stringify(palabraSecretaEnArray)){
         dibujarMensajeGanaste();
-        $sonidoGanador.play();
+        setTimeout(()=>{$sonidoGanador.play()}, MEDIO_SEGUNDO_EN_MILISEGUNDOS * 1.5);
         dibujarFinDelJuego();
         deshabilitarTeclado();
       }
