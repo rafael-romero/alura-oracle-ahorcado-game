@@ -121,6 +121,7 @@ function dibujarBaseParaElAhorcado(){
 }
 
 function dibujarAhorcado(){
+  const MEDIO_SEGUNDO_EN_MILISEGUNDOS = 500;
   pincel.strokeStyle = "white";
   pincel.lineWidth = 5;
   partesDelAhorcado = partesDelAhorcado + 1;
@@ -144,7 +145,6 @@ function dibujarAhorcado(){
   }
   if(partesDelAhorcado === 7){
     dibujarPieDerechoDelAhorcado();
-    setTimeout(finalizarJuego, 500);
   }
 }
 
