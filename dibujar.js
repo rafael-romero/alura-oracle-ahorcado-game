@@ -37,9 +37,9 @@ function dibujarLetraIncorrecta(letrapresionada){
   pincel.textAlign = "center";
   pincel.fillText(palabraAImprimir, tablero.width/2, 70);
   pincel.font = "30px Lucida Console";
-  pincel.fillStyle = "red";
+  pincel.fillStyle = "white";
   pincel.textAlign = "center";
-  pincel.fillText("Letras Equivocadas", tablero.width/2, 30);
+  pincel.fillText("Letras Equivocadas", tablero.width/2, 40);
 }
 
 function dibujarLetraCorrecta(letrapresionada){
