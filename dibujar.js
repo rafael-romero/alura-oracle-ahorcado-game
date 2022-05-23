@@ -128,6 +128,7 @@ function dibujarBaseParaElAhorcado(){
   pincel.stroke();
 }
 
+const $sonidoPerdedor = document.querySelector("#sonido-derrota");
 function dibujarAhorcado(){
   const MEDIO_SEGUNDO_EN_MILISEGUNDOS = 500;
   pincel.strokeStyle = "white";
@@ -153,6 +154,7 @@ function dibujarAhorcado(){
   }
   if(partesDelAhorcado === 7){
     dibujarPieDerechoDelAhorcado();
+    $sonidoPerdedor.play();
   }
 }
 
