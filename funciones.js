@@ -80,10 +80,7 @@ document.addEventListener("keydown", function(event){
   }
 }, false);
 
-function finalizarJuego(){
-  dibujarFinDelJuego();
-  //evitar que se puedan apretar teclas document.addEventListener("keydown", ()=>{""});
-}
+
 
 function validarPalabra(palabra){
   if(palabra.length > 9){
