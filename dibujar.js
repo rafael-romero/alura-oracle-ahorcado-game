@@ -24,10 +24,11 @@ function dibujarMensajeGanaste(){
 }
 
 function dibujarLetraIncorrecta(letrapresionada){
+  const NUMERO_PARA_CORTAR_ITERACION = 100;
   for(let i = 0; i < letrasEquivocadas.length; i++){
     if(letrasEquivocadas[i] === " "){
       letrasEquivocadas[i] = letrapresionada;
-      i = 100;
+      i = NUMERO_PARA_CORTAR_ITERACION;
     }
   }
   let palabraAImprimir = letrasEquivocadas.join("");
