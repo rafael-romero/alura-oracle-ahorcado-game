@@ -81,6 +81,7 @@ document.addEventListener("keydown", function(event){
         dibujarMensajeGanaste();
         $sonidoGanador.play();
         dibujarFinDelJuego();
+        deshabilitarTeclado();
       }
     }
   }else{

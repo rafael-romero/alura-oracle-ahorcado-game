@@ -176,6 +176,7 @@ function dibujarAhorcado(){
     setTimeout(()=>{$sonidoPerdedor.play()}, MEDIO_SEGUNDO_EN_MILISEGUNDOS * 1.5);
     setTimeout(dibujarFinDelJuego(), MEDIO_SEGUNDO_EN_MILISEGUNDOS);
     dibujarMensajePerdiste();
+    deshabilitarTeclado();
   }
 }
 
