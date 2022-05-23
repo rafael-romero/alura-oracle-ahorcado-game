@@ -46,6 +46,7 @@ $btnIniciarJuego.onclick = function(event){
   inicializarVacioLetrasEquivocadas();
   ocultarElemento($contenedorBotonesIniciarJuego);
   mostrarElemento($contenedorBotonesNuevoJuegoDesistir);
+  habilitarTeclado();
 }
 
 const $sonidoSorpresa = document.querySelector("#sonido-sorpresa");
@@ -147,6 +148,7 @@ $btnGuardarYEmpezar.onclick = function(event){
     $sonidoCorrecto.play();
     mostrarMensaje(mensaje);
     ocultarElemento($contenedorBotonesAgregarPalabra);
+    mostrarElemento($contenedorBotonesIniciarJuego);
   }
 }
 
@@ -159,15 +161,18 @@ $btnCerrarModal.addEventListener("click",() => {
 const $btnCancelarNuevaPalabra = document.querySelector("#cancelar-nueva-palabra");
 $btnCancelarNuevaPalabra.onclick = function(event){
   event.preventDefault();
+  eliminarError();
   const mensaje = "No agrego ninguna palabra!";
   mostrarMensaje(mensaje);
   $sonidoIncorrecto.play();
   ocultarElemento($contenedorBotonesAgregarPalabra);
+  mostrarElemento($contenedorBotonesIniciarJuego);
 }
 
 const $btnAgregarNuevaPalabra = document.querySelector("#agregar-nueva-palabra");
 $btnAgregarNuevaPalabra.onclick = function(event){
   event.preventDefault();
+  ocultarElemento($contenedorBotonesIniciarJuego);
   mostrarElemento($contenedorBotonesAgregarPalabra);
 }
 
@@ -191,7 +196,9 @@ const $contenedorBotonesNuevoJuegoDesistir = document.querySelector("#contenedor
 const $btnDesistir = document.querySelector("#desistir");
 $btnDesistir.onclick = function(event){
   event.preventDefault();
+  ocultarElemento($tablero);
   reiniciarJuego();
+  deshabilitarTeclado();
   mostrarElemento($contenedorBotonesIniciarJuego);
   ocultarElemento($contenedorBotonesNuevoJuegoDesistir);
 }
