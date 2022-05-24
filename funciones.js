@@ -149,6 +149,7 @@ $btnGuardarYEmpezar.onclick = function(event){
     const mensaje = "Su palabra a sido agregada!";
     $sonidoCorrecto.play();
     mostrarMensaje(mensaje);
+    $inputPalabraSecretaAAgregar.textContent = "";
     ocultarElemento($contenedorBotonesAgregarPalabra);
     mostrarElemento($contenedorBotonesIniciarJuego);
   }
@@ -177,6 +178,7 @@ $btnCancelarNuevaPalabra.onclick = function(event){
   const mensaje = "No agrego ninguna palabra!";
   mostrarMensaje(mensaje);
   $sonidoIncorrecto.play();
+  $inputPalabraSecretaAAgregar.textContent = "";
   ocultarElemento($contenedorBotonesAgregarPalabra);
   mostrarElemento($contenedorBotonesIniciarJuego);
 }
