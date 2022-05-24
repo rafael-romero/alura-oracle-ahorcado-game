@@ -1,6 +1,11 @@
 let tablero = document.querySelector("#tablero");
 let pincel = tablero.getContext("2d");
 let partesDelAhorcado = 0;
+let $pizarron = document.querySelector("#pizarron");
+
+function dibujarPizarron(){
+  pincel.drawImage($pizarron, -30, -10, 715, 490);
+}
 
 function dibujarCaraAhorcadoGanador(){
   //OJO IZQUIERDO
