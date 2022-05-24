@@ -4,6 +4,13 @@ body{
   font-family: Arial, Helvetica, sans-serif;
 }
 
+h1{
+  font-size: xx-large;
+  text-align: center;
+  margin-top: 20px;
+  color: #0A3871;
+}
+
 #img-logo-alura{
   margin-left: 50px;
 }
