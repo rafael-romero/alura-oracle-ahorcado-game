@@ -11,41 +11,53 @@ body{
   display: block;
 }
 
-#contenedor-iniciar-juego{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+#iniciar-juego{
+  width: 250px;
+  height: 75px;
 }
+ 
+#agregar-nueva-palabra{
+  width: 200px;
+  height: 60px;
+}
+
 
 .boton-azul{
   background: #0A3871;
-  /* width: 250px;
-  height: 75px;
-  medida para 'iniciar juego' */
   width: 250px;
   height: 50px;  
-  color: #FFFFFF;
+  color: #E5E5E5;
   border-radius: 20px;
+  transition: all .5s;
+}
+
+.boton-azul:hover{
+  background: #E5E5E5;
+  color: #0A3871;
+  transform: scale(1.2);
 }
 
 .boton-blanco{
   background: #E5E5E5;
-  /* width: 200px;
-  height: 60px;
-  medida para 'agregar nueva palabra' */
   width: 250px;
   height: 50px;
   color: #0A3871;
   border: 1px solid #0A3871;
   border-radius: 20px;
   margin: 20px;
+  transition: all .5s;
 }
 
-#contenedor-agregar-palabra{
+.boton-blanco:hover{
+  background: #0A3871;
+  color: #E5E5E5;
+  transform: scale(1.2);
+}
+
+.botones-en-columna{
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: red solid 1px;
 }
 
 #palabra-secreta-a-agregar{
@@ -64,14 +76,10 @@ body{
   top: 25px;
 }
 
-#contenedor-botones-agregar-palabra{
+.botones-de-costado{
   display: flex;
   flex-direction: row;
-}
-
-#guardar-y-empezar{
-  position: relative;
-  top: 20px;
+  align-items: center;
 }
 
 #mensajes-al-usuario{
