@@ -18,7 +18,7 @@ function dibujarCaraAhorcadoGanador(){
   pincel.beginPath();
   pincel.arc(210, 145, 3, 0, 2 * Math.PI);
   pincel.stroke();
-  //BOCA TRISTE
+  //BOCA FELIZ
   pincel.lineWidth = 3;
   pincel.moveTo(190, 160);
   pincel.bezierCurveTo(190, 170, 210, 170, 210, 160);
