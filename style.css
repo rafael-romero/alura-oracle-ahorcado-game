@@ -28,13 +28,14 @@ body{
   height: 50px;  
   color: #E5E5E5;
   border-radius: 20px;
+  margin: 25px;
   transition: all .5s;
 }
 
 .boton-azul:hover{
   background: #E5E5E5;
   color: #0A3871;
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .boton-blanco{
@@ -44,14 +45,14 @@ body{
   color: #0A3871;
   border: 1px solid #0A3871;
   border-radius: 20px;
-  margin: 20px;
+  margin: 25px;
   transition: all .5s;
 }
 
 .boton-blanco:hover{
   background: #0A3871;
   color: #E5E5E5;
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .botones-en-columna{
