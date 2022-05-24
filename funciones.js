@@ -135,6 +135,7 @@ function mostrarMensaje(mensaje){
   document.querySelector("#mensaje-de-modal").textContent = mensaje;
   if (!$modal.open) {
     $modal.showModal();
+    deshabilitarTeclado();
   }
 }
 
@@ -166,12 +167,14 @@ $modal.onclick = function ocultarModal(ev) {
   if ((x < rect.x) || (x > rect.x + rect.width) ||
       (y < rect.y) || (y > rect.y + rect.height)) {
     $modal.close();
+    habilitarTeclado();
   }
 }
 
 $btnCerrarModal.onclick = function (ev) {
-  ev.preventDefault()
-  $modal.close()
+  ev.preventDefault();
+  $modal.close();
+  habilitarTeclado();
 }
  
 const $btnCancelarNuevaPalabra = document.querySelector("#cancelar-nueva-palabra");
