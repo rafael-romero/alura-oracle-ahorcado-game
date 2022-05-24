@@ -15,23 +15,28 @@
   </header>
   <main>
     <canvas id="tablero" width="800" height="600" style="border:3px solid #dddddd;" class="oculto"></canvas>
+    
     <div id="contenedor-iniciar-juego">
-      <input type="button" id="iniciar-juego" value="Iniciar Juego">
-      <input type="button" id="agregar-nueva-palabra" value="Agregar una nueva palabra">
+      <input type="button" id="iniciar-juego" value="Iniciar Juego" class="boton-azul">
+      <input type="button" id="agregar-nueva-palabra" value="Agregar una nueva palabra" class="boton-blanco">
     </div>
+    
     <div id="contenedor-nuevo-juego-desistir" class="oculto">
-      <input type="button" id="nuevo-juego" value="Nuevo Juego">
-      <input type="button" id="desistir" value="Desistir">
+      <input type="button" id="nuevo-juego" value="Nuevo Juego" class="boton-azul">
+      <input type="button" id="desistir" value="Desistir" class="boton-blanco">
     </div>
 
     <div id="contenedor-agregar-palabra" class="oculto">
       <input type="text" placeholder="Ingrese una Palabra" id="palabra-secreta-a-agregar">
-      <span>&#8252 Maximo de 8 letras</span>
-      <input type="button" id="guardar-y-empezar" value="Guardar y Empezar" >
-      <input type="button" id="cancelar-nueva-palabra" value="Cancelar" >
+      <span id="aclaracion-maximo-letras">&#9888 Maximo de 8 letras</span>
+      <div id="contenedor-botones-agregar-palabra">
+        <input type="button" id="guardar-y-empezar" value="Guardar y Empezar" class="boton-azul">
+        <input type="button" id="cancelar-nueva-palabra" value="Cancelar" class="boton-blanco">
+      </div>
+      <span id="mensajes-al-usuario" class="oculto"></span>
     </div>
 
-    <span id="mensajes-al-usuario" class="oculto"></span>
+    
 
     <dialog id="modal">
       <img src="img/icono-de-atencion.png" alt="icono-de-atencion" width="30" height="30">
