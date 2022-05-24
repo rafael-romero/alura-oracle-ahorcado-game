@@ -130,7 +130,9 @@ function mostrarError(error){
 
 function mostrarMensaje(mensaje){
   document.querySelector("#mensaje-de-modal").textContent = mensaje;
-  $modal.showModal();
+  if (!$modal.open) {
+    $modal.showModal();
+  }
 }
 
 const $contenedorBotonesAgregarPalabra = document.querySelector("#contenedor-agregar-palabra");
@@ -154,9 +156,19 @@ $btnGuardarYEmpezar.onclick = function(event){
 
 const $btnCerrarModal = document.querySelector("#btn-cerrar-modal");
 const $modal = document.querySelector("#modal");
-$btnCerrarModal.addEventListener("click",() => {
-  $modal.close();
-});
+$modal.onclick = function ocultarModal(ev) {
+  var rect = $modal.getBoundingClientRect();
+  var { clientX: x, clientY: y } = ev;
+  if ((x < rect.x) || (x > rect.x + rect.width) ||
+      (y < rect.y) || (y > rect.y + rect.height)) {
+    $modal.close();
+  }
+}
+
+$btnCerrarModal.onclick = function (ev) {
+  ev.preventDefault()
+  $modal.close()
+}
  
 const $btnCancelarNuevaPalabra = document.querySelector("#cancelar-nueva-palabra");
 $btnCancelarNuevaPalabra.onclick = function(event){
