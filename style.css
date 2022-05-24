@@ -44,7 +44,7 @@ body{
   color: #0A3871;
   border: 1px solid #0A3871;
   border-radius: 20px;
-  margin: 20px;
+  margin: 0 20px;
   transition: all .5s;
 }
 
@@ -79,7 +79,8 @@ body{
 .botones-de-costado{
   display: flex;
   flex-direction: row;
-  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
 }
 
 #mensajes-al-usuario{
