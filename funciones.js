@@ -84,6 +84,9 @@ const apretarTecla = function(e){
       verificarSiLaLetraCoincide(letraPresionada);
       if(JSON.stringify(palabraFormadaPorElUsuario) === JSON.stringify(palabraSecretaEnArray)){
         dibujarMensajeGanaste();
+        if(partesDelAhorcado >= 2){
+          dibujarCaraAhorcadoGanador();
+        }
         setTimeout(()=>{$sonidoGanador.play()}, MEDIO_SEGUNDO_EN_MILISEGUNDOS * 1.5);
         dibujarFinDelJuego();
         deshabilitarTeclado();

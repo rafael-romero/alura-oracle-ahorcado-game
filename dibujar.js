@@ -2,7 +2,25 @@ let tablero = document.querySelector("#tablero");
 let pincel = tablero.getContext("2d");
 let partesDelAhorcado = 0;
 
-function dibujarCaraAhorcado(){
+function dibujarCaraAhorcadoGanador(){
+  //OJO IZQUIERDO
+  pincel.lineWidth = 3;
+  pincel.beginPath();
+  pincel.arc(190, 145, 3, 0, 2 * Math.PI);
+  pincel.stroke();
+  //OJO DERECHO
+  pincel.lineWidth = 3;
+  pincel.beginPath();
+  pincel.arc(210, 145, 3, 0, 2 * Math.PI);
+  pincel.stroke();
+  //BOCA TRISTE
+  pincel.lineWidth = 3;
+  pincel.moveTo(190, 160);
+  pincel.bezierCurveTo(190, 170, 210, 170, 210, 160);
+  pincel.stroke();
+}
+
+function dibujarCaraAhorcadoPerdedor(){
   pincel.lineWidth = 2;
   pincel.beginPath();
   //OJO IZQUIERDO
@@ -172,7 +190,7 @@ function dibujarAhorcado(){
   }
   if(partesDelAhorcado === 7){
     dibujarPieDerechoDelAhorcado();
-    dibujarCaraAhorcado();
+    dibujarCaraAhorcadoPerdedor();
     setTimeout(()=>{$sonidoPerdedor.play()}, MEDIO_SEGUNDO_EN_MILISEGUNDOS * 1.5);
     setTimeout(dibujarFinDelJuego(), MEDIO_SEGUNDO_EN_MILISEGUNDOS);
     dibujarMensajePerdiste();
