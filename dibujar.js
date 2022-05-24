@@ -26,7 +26,7 @@ function dibujarFinDelJuego(){
   pincel.font = "45px Helvetica";
   pincel.fillStyle = "red";
   pincel.textAlign = "center";
-  pincel.fillText("Fin Del Juego!!!", (tablero.width/2)+50, 300);
+  pincel.fillText("Fin Del Juego!!!", (tablero.width/2)+85, 270);
 }
 
 function dibujarMensajePerdiste(){
@@ -40,7 +40,7 @@ function dibujarMensajeGanaste(){
   pincel.font = "45px Helvetica";
   pincel.fillStyle = "green";
   pincel.textAlign = "center";
-  pincel.fillText("Ganaste, Felicidades!!!", (tablero.width/2)+50, 125);
+  pincel.fillText("Ganaste!!!", (tablero.width/2)+80, 125);
 }
 
 function dibujarLetraIncorrecta(letrapresionada){
