@@ -1,21 +1,36 @@
-# Juego del Ahorcado-by Oracle-Alura
-************************************  
+<h1 align="center">Juego del Ahorcado-by Oracle-Alura :pencil2:</h1>
   
-## En este proyecto vamos a desarrollar el clasico juego del "ahorcado".  
-Los requisitos para su desarrollo son:  
-*Debe funcionar solo con letras mayúsculas.  
-*No deben ser utilizadas letras con acentos ni caracteres especiales.  
-*Al completar el dibujo de la horca, debe ser mostrado un mensaje "Fin del juego" en la pantalla.  
-*Si se completa la palabra correcta antes de que se acaben los intentos, debe ser mostrado un mensaje de "Ganaste, Felicidades!" en la pantalla.  
-*La página debe tener los guiones indicando cada letra de la palabra, separados por un espacio.  
-*Para comenzar el juego la página debe tener un botón de "Iniciar Juego".  
-*No debe ser posible escribir números dentro del juego.  
-*Las letras equivocadas deben aparecer en la pantalla, pero no pueden aparecer de forma repetida.  
-*Las letras correctas deben aparecer en la pantalla encima de los guiones, en la posición correcta en relación a la palabra.  
+![trump-draw](https://user-images.githubusercontent.com/95598903/170319732-a1352eea-4833-4cc0-ac07-8c65c9db685c.gif)
   
-### Extras:  
-*La página debe tener un campo para inserción de texto con la finalidad de adicionar nuevas palabras al juego, y un botón "Agregar palabra".  
   
-***Author: Rafael Romero***  
-[Link a mi repositorio de GitHub](https://github.com/rafael-romero)  
+<h2 align="center">
+:construction: En este proyecto vamos a desarrollar el clasico juego del "ahorcado" :construction:
+</h2><br><br>
+    
+<h3> :white_check_mark: Los requisitos para su desarrollo son :white_check_mark: </h3>  
+<ul>
+<li>Debe funcionar solo con letras mayúsculas.</li>  
+<li>No deben ser utilizadas letras con acentos ni caracteres especiales.</li>  
+<li>Al completar el dibujo de la horca, debe ser mostrado un mensaje "Fin del juego" en la pantalla.</li>
+<li>Si se completa la palabra correcta antes de que se acaben los intentos, debe ser mostrado un mensaje de "Ganaste, Felicidades!" en la pantalla.</li>  
+<li>La página debe tener los guiones indicando cada letra de la palabra, separados por un espacio.</li>  
+<li>Para comenzar el juego la página debe tener un botón de "Iniciar Juego".</li>  
+<li>No debe ser posible escribir números dentro del juego.</li>  
+<li>Las letras equivocadas deben aparecer en la pantalla, pero no pueden aparecer de forma repetida.</li>  
+<li>Las letras correctas deben aparecer en la pantalla encima de los guiones, en la posición correcta en relación a la palabra.</li>
+</ul><br>
+  
+<h3> :confetti_ball: Extras: :confetti_ball: </h3>  
+- La página debe tener un campo para inserción de texto con la finalidad de adicionar nuevas palabras al juego, y un botón "Agregar palabra".   <br><br><br><hr>
+
+<h4>Tecnologias utilizadas :eyes: </h4>
+<ul>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>JAVASCRIPT</li>
+</ul>
+
+<hr>
+***Author: Rafael Romero*** :wave:  
+:link: [Link a mi repositorio de GitHub](https://github.com/rafael-romero)  
 
