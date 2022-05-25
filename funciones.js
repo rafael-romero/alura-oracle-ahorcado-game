@@ -212,6 +212,7 @@ $btnAgregarNuevaPalabra.onclick = function(event){
 
 function reiniciarJuego(){
   tablero.width = tablero.width;
+  dibujarPizarron();
   palabraSecreta = "";
   palabraSecretaEnArray = [];
   palabraFormadaPorElUsuario =[];
