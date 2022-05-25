@@ -8,6 +8,7 @@ function dibujarPizarron(){
 }
 
 function dibujarCaraAhorcadoGanador(){
+  pincel.strokeStyle = "white";
   //OJO IZQUIERDO
   pincel.lineWidth = 3;
   pincel.beginPath();
@@ -26,6 +27,7 @@ function dibujarCaraAhorcadoGanador(){
 }
 
 function dibujarCaraAhorcadoPerdedor(){
+  pincel.strokeStyle = "white";
   pincel.lineWidth = 2;
   pincel.beginPath();
   //OJO IZQUIERDO
@@ -48,21 +50,27 @@ function dibujarCaraAhorcadoPerdedor(){
 function dibujarFinDelJuego(){
   pincel.font = "45px Helvetica";
   pincel.fillStyle = "red";
+  pincel.strokeStyle = "white";
   pincel.textAlign = "center";
+  pincel.strokeText("Fin Del Juego!!!", (tablero.width/2)+85, 270);
   pincel.fillText("Fin Del Juego!!!", (tablero.width/2)+85, 270);
 }
 
 function dibujarMensajePerdiste(){
   pincel.font = "45px Helvetica";
   pincel.fillStyle = "red";
+  pincel.strokeStyle = "white"
   pincel.textAlign = "center";
+  pincel.strokeText("Perdiste!!!", (tablero.width/2)+50, 125);
   pincel.fillText("Perdiste!!!", (tablero.width/2)+50, 125);
 }
 
 function dibujarMensajeGanaste(){
   pincel.font = "45px Helvetica";
-  pincel.fillStyle = "green";
+  pincel.fillStyle = "Darkgreen";
+  pincel.strokeStyle = "white"
   pincel.textAlign = "center";
+  pincel.strokeText("Ganaste!!!", (tablero.width/2)+80, 125);
   pincel.fillText("Ganaste!!!", (tablero.width/2)+80, 125);
 }
 
@@ -77,12 +85,16 @@ function dibujarLetraIncorrecta(letrapresionada){
   let palabraAImprimir = letrasEquivocadas.join("");
   pincel.font = "30px Lucida Console";
   pincel.fillStyle = "coral";
+  pincel.strokeStyle = "black";
   pincel.textAlign = "center";
+  pincel.strokeText(palabraAImprimir, tablero.width/2, 70);
   pincel.fillText(palabraAImprimir, tablero.width/2, 70);
   pincel.font = "30px Lucida Console";
   pincel.fillStyle = "white";
+  pincel.strokeStyle = "blue";
   pincel.textAlign = "center";
-  pincel.fillText("Letras Equivocadas", tablero.width/2, 40);
+  pincel.strokeText("Letras Equivocadas", tablero.width/2, 25);
+  pincel.fillText("Letras Equivocadas", tablero.width/2, 25);
 }
 
 function dibujarLetraCorrecta(letrapresionada){
@@ -101,7 +113,7 @@ function dibujarLetraCorrecta(letrapresionada){
 
 function dibujarGuionesPalabraSecreta(palabrasecreta){
   let guionesPalabraSecreta = ""; 
-  pincel.font = "30px Lucida Console";
+  pincel.font = "bold 30px Lucida Console";
   pincel.fillStyle = "white";
   pincel.textAlign = "center";
   for(let i = 0; i < palabrasecreta.length; i++){
@@ -173,6 +185,8 @@ const MEDIO_SEGUNDO_EN_MILISEGUNDOS = 500;
 const $sonidoPerdedor = document.querySelector("#sonido-derrota");
 function dibujarAhorcado(){
   pincel.strokeStyle = "white";
+  pincel.lineJoin = "round";
+  pincel.lineCap = "round";
   pincel.lineWidth = 5;
   partesDelAhorcado = partesDelAhorcado + 1;
   if(partesDelAhorcado === 1){
