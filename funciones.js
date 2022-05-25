@@ -19,12 +19,22 @@ function ponerEspaciosVaciosEnPalabraFormadaPorElUsuario(){
   }
 }
 
+function recargarPagina(){
+  location.reload();
+}
+
 const palabrasDelJuego = ["DEVOPS", "ALURA", "ORACLE", "JAVASCRIPT", "HTML", "CSS", "JAVA", "PHYTON", "MYSQL", "CSHARP", "MONGODB", "RUBY", "TECLADO", "MOUSE", "MONITOR", "PARLANTE", "CPU", "GPU", "MEMORIA", "MOTHER", "RAM", "COOLER"];
 function crearPalabraSecreta(){
-   const numeroElegido = Math.floor(Math.random() * palabrasDelJuego.length);
-   const palabraSecretaElegida = palabrasDelJuego[numeroElegido];
-   palabrasDelJuego.splice(numeroElegido, 1); 
-   return palabraSecretaElegida;
+  const numeroElegido = Math.floor(Math.random() * palabrasDelJuego.length);
+  const palabraSecretaElegida = palabrasDelJuego[numeroElegido];
+  if(palabrasDelJuego.length > 0){
+    palabrasDelJuego.splice(numeroElegido, 1); 
+  }else{
+    const mensaje = "Ya no quedan palabras para adivinar!!!";
+    mostrarMensaje(mensaje);
+    setTimeout(recargarPagina, MEDIO_SEGUNDO_EN_MILISEGUNDOS * 5);
+  }
+  return palabraSecretaElegida;
 }
 
 const $tablero = document.querySelector("#tablero");
