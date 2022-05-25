@@ -1,8 +1,9 @@
 <h1 align="center">Juego del Ahorcado-by Oracle-Alura :pencil2:</h1>
-  
-![trump-draw](https://user-images.githubusercontent.com/95598903/170319732-a1352eea-4833-4cc0-ac07-8c65c9db685c.gif)
-  
-  
+
+<div align="center">
+ <img src="https://user-images.githubusercontent.com/95598903/170319732-a1352eea-4833-4cc0-ac07-8c65c9db685c.gif">
+</div>
+   
 <h2 align="center">
 :construction: En este proyecto vamos a desarrollar el clasico juego del "ahorcado" :construction:
 </h2><br><br>
@@ -31,6 +32,6 @@
 </ul>
 
 <hr>
-***Author: Rafael Romero*** :wave:  
-:link: [Link a mi repositorio de GitHub](https://github.com/rafael-romero)  
+***Author: Rafael Romero*** :wave: <br>  
+:link:  [Link a mi repositorio de GitHub](https://github.com/rafael-romero)  
 
