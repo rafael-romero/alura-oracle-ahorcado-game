@@ -99,8 +99,8 @@ function dibujarLetraIncorrecta(letrapresionada){
   pincel.fillStyle = "coral";
   pincel.strokeStyle = "black";
   pincel.textAlign = "center";
-  pincel.strokeText(palabraAImprimir, tablero.width/2, 70);
-  pincel.fillText(palabraAImprimir, tablero.width/2, 70);
+  pincel.strokeText(palabraAImprimir, tablero.width/2, 65);
+  pincel.fillText(palabraAImprimir, tablero.width/2, 65);
   pincel.font = "30px Lucida Console";
   pincel.fillStyle = "white";
   pincel.strokeStyle = "blue";
@@ -181,7 +181,7 @@ function dibujarCabezaDelAhorcado(){
 
 function dibujarBaseParaElAhorcado(){
   pincel.beginPath();
-  pincel.moveTo(30, 320);
+  pincel.moveTo(40, 320);
   pincel.lineTo(280, 320);
   pincel.moveTo(70, 320);
   pincel.lineTo(72, 80);
