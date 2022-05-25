@@ -47,13 +47,25 @@ function dibujarCaraAhorcadoPerdedor(){
   pincel.stroke();
 }
 
+function dibujarPalabraSecreta(){
+  pincel.font = "40px Helvetica";
+  pincel.fillStyle = "white";
+  pincel.strokeStyle = "blue";
+  pincel.textAlign = "center";
+  pincel.strokeText("La palabra secreta", (tablero.width/2)+85, 175);
+  pincel.fillText("La palabra secreta", (tablero.width/2)+85, 175);
+  pincel.strokeText(`era ${palabraSecreta}`, (tablero.width/2)+85, 220);
+  pincel.fillText(`era ${palabraSecreta}`, (tablero.width/2)+85, 220);
+}
+
 function dibujarFinDelJuego(){
   pincel.font = "45px Helvetica";
   pincel.fillStyle = "red";
   pincel.strokeStyle = "white";
   pincel.textAlign = "center";
-  pincel.strokeText("Fin Del Juego!!!", (tablero.width/2)+85, 270);
-  pincel.fillText("Fin Del Juego!!!", (tablero.width/2)+85, 270);
+  pincel.strokeText("Fin Del Juego!!!", (tablero.width/2)+85, 290);
+  pincel.fillText("Fin Del Juego!!!", (tablero.width/2)+85, 290);
+  dibujarPalabraSecreta();
 }
 
 function dibujarMensajePerdiste(){
