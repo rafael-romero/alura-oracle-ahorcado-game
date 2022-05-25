@@ -177,14 +177,18 @@ $modal.onclick = function ocultarModal(ev) {
   if ((x < rect.x) || (x > rect.x + rect.width) ||
       (y < rect.y) || (y > rect.y + rect.height)) {
     $modal.close();
-    habilitarTeclado();
+    if(palabraSecreta.length > 0){
+      habilitarTeclado();
+    }    
   }
 }
 
 $btnCerrarModal.onclick = function (ev) {
   ev.preventDefault();
   $modal.close();
-  habilitarTeclado();
+  if(palabraSecreta.length > 0){
+    habilitarTeclado();
+  }   
 }
  
 const $btnCancelarNuevaPalabra = document.querySelector("#cancelar-nueva-palabra");
