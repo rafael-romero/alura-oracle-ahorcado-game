@@ -3,11 +3,11 @@ let pincel = tablero.getContext("2d");
 let partesDelAhorcado = 0;
 let $pizarron = document.querySelector("#pizarron");
 
-function dibujarPizarron(){
+function dibujarPizarron() {
   pincel.drawImage($pizarron, -30, -10, 715, 490);
 }
 
-function dibujarCaraAhorcadoGanador(){
+function dibujarCaraAhorcadoGanador() {
   pincel.strokeStyle = "white";
   //OJO IZQUIERDO
   pincel.lineWidth = 3;
@@ -26,7 +26,7 @@ function dibujarCaraAhorcadoGanador(){
   pincel.stroke();
 }
 
-function dibujarCaraAhorcadoPerdedor(){
+function dibujarCaraAhorcadoPerdedor() {
   pincel.strokeStyle = "white";
   pincel.lineWidth = 2;
   pincel.beginPath();
@@ -47,49 +47,49 @@ function dibujarCaraAhorcadoPerdedor(){
   pincel.stroke();
 }
 
-function dibujarPalabraSecreta(){
+function dibujarPalabraSecreta() {
   pincel.font = "40px Helvetica";
   pincel.fillStyle = "white";
   pincel.strokeStyle = "blue";
   pincel.textAlign = "center";
-  pincel.strokeText("La palabra secreta", (tablero.width/2)+85, 175);
-  pincel.fillText("La palabra secreta", (tablero.width/2)+85, 175);
-  pincel.strokeText(`era ${palabraSecreta}`, (tablero.width/2)+85, 220);
-  pincel.fillText(`era ${palabraSecreta}`, (tablero.width/2)+85, 220);
+  pincel.strokeText("La palabra secreta", tablero.width / 2 + 85, 175);
+  pincel.fillText("La palabra secreta", tablero.width / 2 + 85, 175);
+  pincel.strokeText(`era ${palabraSecreta}`, tablero.width / 2 + 85, 220);
+  pincel.fillText(`era ${palabraSecreta}`, tablero.width / 2 + 85, 220);
 }
 
-function dibujarFinDelJuego(){
+function dibujarFinDelJuego() {
   pincel.font = "45px Helvetica";
   pincel.fillStyle = "red";
   pincel.strokeStyle = "white";
   pincel.textAlign = "center";
-  pincel.strokeText("Fin Del Juego!!!", (tablero.width/2)+85, 290);
-  pincel.fillText("Fin Del Juego!!!", (tablero.width/2)+85, 290);
+  pincel.strokeText("Fin Del Juego!!!", tablero.width / 2 + 85, 290);
+  pincel.fillText("Fin Del Juego!!!", tablero.width / 2 + 85, 290);
   dibujarPalabraSecreta();
 }
 
-function dibujarMensajePerdiste(){
+function dibujarMensajePerdiste() {
   pincel.font = "45px Helvetica";
   pincel.fillStyle = "red";
-  pincel.strokeStyle = "white"
+  pincel.strokeStyle = "white";
   pincel.textAlign = "center";
-  pincel.strokeText("Perdiste!!!", (tablero.width/2)+50, 125);
-  pincel.fillText("Perdiste!!!", (tablero.width/2)+50, 125);
+  pincel.strokeText("Perdiste!!!", tablero.width / 2 + 50, 125);
+  pincel.fillText("Perdiste!!!", tablero.width / 2 + 50, 125);
 }
 
-function dibujarMensajeGanaste(){
+function dibujarMensajeGanaste() {
   pincel.font = "45px Helvetica";
   pincel.fillStyle = "Darkgreen";
-  pincel.strokeStyle = "white"
+  pincel.strokeStyle = "white";
   pincel.textAlign = "center";
-  pincel.strokeText("Ganaste!!!", (tablero.width/2)+80, 125);
-  pincel.fillText("Ganaste!!!", (tablero.width/2)+80, 125);
+  pincel.strokeText("Ganaste!!!", tablero.width / 2 + 80, 125);
+  pincel.fillText("Ganaste!!!", tablero.width / 2 + 80, 125);
 }
 
-function dibujarLetraIncorrecta(letrapresionada){
+function dibujarLetraIncorrecta(letrapresionada) {
   const NUMERO_PARA_CORTAR_ITERACION = 100;
-  for(let i = 0; i < letrasEquivocadas.length; i++){
-    if(letrasEquivocadas[i] === " "){
+  for (let i = 0; i < letrasEquivocadas.length; i++) {
+    if (letrasEquivocadas[i] === " ") {
       letrasEquivocadas[i] = letrapresionada;
       i = NUMERO_PARA_CORTAR_ITERACION;
     }
@@ -99,42 +99,41 @@ function dibujarLetraIncorrecta(letrapresionada){
   pincel.fillStyle = "coral";
   pincel.strokeStyle = "black";
   pincel.textAlign = "center";
-  pincel.strokeText(palabraAImprimir, tablero.width/2, 65);
-  pincel.fillText(palabraAImprimir, tablero.width/2, 65);
+  pincel.strokeText(palabraAImprimir, tablero.width / 2, 65);
+  pincel.fillText(palabraAImprimir, tablero.width / 2, 65);
   pincel.font = "30px Lucida Console";
   pincel.fillStyle = "white";
   pincel.strokeStyle = "blue";
   pincel.textAlign = "center";
-  pincel.strokeText("Letras Equivocadas", tablero.width/2, 25);
-  pincel.fillText("Letras Equivocadas", tablero.width/2, 25);
+  pincel.strokeText("Letras Equivocadas", tablero.width / 2, 25);
+  pincel.fillText("Letras Equivocadas", tablero.width / 2, 25);
 }
 
-function dibujarLetraCorrecta(letrapresionada){
-  for(let i = 0; i < palabraSecretaEnArray.length; i++){
-    if(letrapresionada === palabraSecretaEnArray[i]){
+function dibujarLetraCorrecta(letrapresionada) {
+  for (let i = 0; i < palabraSecretaEnArray.length; i++) {
+    if (letrapresionada === palabraSecretaEnArray[i]) {
       palabraFormadaPorElUsuario[i] = letrapresionada;
-    }   
+    }
   }
   let palabraAImprimir = palabraFormadaPorElUsuario.join(" ");
   pincel.font = "30px Lucida Console";
   pincel.fillStyle = "white";
   pincel.textAlign = "center";
-  pincel.fillText(palabraAImprimir, ((tablero.width-20)/2), 375);
+  pincel.fillText(palabraAImprimir, (tablero.width - 20) / 2, 375);
 }
 
-
-function dibujarGuionesPalabraSecreta(palabrasecreta){
-  let guionesPalabraSecreta = ""; 
+function dibujarGuionesPalabraSecreta(palabrasecreta) {
+  let guionesPalabraSecreta = "";
   pincel.font = "bold 30px Lucida Console";
   pincel.fillStyle = "white";
   pincel.textAlign = "center";
-  for(let i = 0; i < palabrasecreta.length; i++){
+  for (let i = 0; i < palabrasecreta.length; i++) {
     guionesPalabraSecreta += "_ ";
   }
-  pincel.fillText(guionesPalabraSecreta, tablero.width/2, 385);
+  pincel.fillText(guionesPalabraSecreta, tablero.width / 2, 385);
 }
 
-function dibujarPieDerechoDelAhorcado(){
+function dibujarPieDerechoDelAhorcado() {
   pincel.beginPath();
   pincel.moveTo(200, 249);
   pincel.lineTo(220, 285);
@@ -143,7 +142,7 @@ function dibujarPieDerechoDelAhorcado(){
   pincel.stroke();
 }
 
-function dibujarPieIzquierdoDelAhorcado(){
+function dibujarPieIzquierdoDelAhorcado() {
   pincel.beginPath();
   pincel.moveTo(200, 249);
   pincel.lineTo(180, 285);
@@ -152,34 +151,34 @@ function dibujarPieIzquierdoDelAhorcado(){
   pincel.stroke();
 }
 
-function dibujarBrazoDerechoDelAhorcado(){
+function dibujarBrazoDerechoDelAhorcado() {
   pincel.beginPath();
   pincel.moveTo(200, 185);
   pincel.lineTo(220, 220);
   pincel.stroke();
 }
 
-function dibujarBrazoIzquierdoDelAhorcado(){
+function dibujarBrazoIzquierdoDelAhorcado() {
   pincel.beginPath();
   pincel.moveTo(200, 185);
   pincel.lineTo(180, 220);
   pincel.stroke();
 }
 
-function dibujarTroncoDelAhorcado(){
+function dibujarTroncoDelAhorcado() {
   pincel.beginPath();
   pincel.moveTo(200, 180);
   pincel.lineTo(200, 250);
   pincel.stroke();
 }
 
-function dibujarCabezaDelAhorcado(){
+function dibujarCabezaDelAhorcado() {
   pincel.beginPath();
   pincel.arc(200, 155, 25, 0, 2 * Math.PI);
   pincel.stroke();
 }
 
-function dibujarBaseParaElAhorcado(){
+function dibujarBaseParaElAhorcado() {
   pincel.beginPath();
   pincel.moveTo(40, 320);
   pincel.lineTo(280, 320);
@@ -195,37 +194,38 @@ function dibujarBaseParaElAhorcado(){
 }
 const MEDIO_SEGUNDO_EN_MILISEGUNDOS = 500;
 const $sonidoPerdedor = document.querySelector("#sonido-derrota");
-function dibujarAhorcado(){
+function dibujarAhorcado() {
   pincel.strokeStyle = "white";
   pincel.lineJoin = "round";
   pincel.lineCap = "round";
   pincel.lineWidth = 5;
   partesDelAhorcado = partesDelAhorcado + 1;
-  if(partesDelAhorcado === 1){
+  if (partesDelAhorcado === 1) {
     dibujarBaseParaElAhorcado();
   }
-  if(partesDelAhorcado === 2){
+  if (partesDelAhorcado === 2) {
     dibujarCabezaDelAhorcado();
   }
-  if(partesDelAhorcado === 3){
+  if (partesDelAhorcado === 3) {
     dibujarTroncoDelAhorcado();
   }
-  if(partesDelAhorcado === 4){
+  if (partesDelAhorcado === 4) {
     dibujarBrazoIzquierdoDelAhorcado();
   }
-  if(partesDelAhorcado === 5){
+  if (partesDelAhorcado === 5) {
     dibujarBrazoDerechoDelAhorcado();
   }
-  if(partesDelAhorcado === 6){
+  if (partesDelAhorcado === 6) {
     dibujarPieIzquierdoDelAhorcado();
   }
-  if(partesDelAhorcado === 7){
+  if (partesDelAhorcado === 7) {
     dibujarPieDerechoDelAhorcado();
     dibujarCaraAhorcadoPerdedor();
-    setTimeout(()=>{$sonidoPerdedor.play()}, MEDIO_SEGUNDO_EN_MILISEGUNDOS * 1.5);
+    setTimeout(() => {
+      $sonidoPerdedor.play();
+    }, MEDIO_SEGUNDO_EN_MILISEGUNDOS * 1.5);
     setTimeout(dibujarFinDelJuego(), MEDIO_SEGUNDO_EN_MILISEGUNDOS);
     dibujarMensajePerdiste();
     deshabilitarTeclado();
   }
 }
-
