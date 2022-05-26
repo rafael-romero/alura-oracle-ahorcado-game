@@ -87,6 +87,7 @@ body {
   width: 200px;
   height: 40px;
   font-size: larger;
+  outline: none;
 }
 
 ::placeholder {
