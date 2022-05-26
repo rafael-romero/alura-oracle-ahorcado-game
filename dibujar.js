@@ -1,10 +1,31 @@
-let tablero = document.querySelector("#tablero");
-let pincel = tablero.getContext("2d");
+const tablero = document.querySelector("#tablero");
+const pincel = tablero.getContext("2d");
+const $pizarron = document.querySelector("#pizarron");
 let partesDelAhorcado = 0;
-let $pizarron = document.querySelector("#pizarron");
 
 function dibujarPizarron() {
   pincel.drawImage($pizarron, -30, -10, 715, 490);
+}
+
+function dibujarPalabraSecreta() {
+  pincel.font = "40px Helvetica";
+  pincel.fillStyle = "white";
+  pincel.strokeStyle = "blue";
+  pincel.textAlign = "center";
+  pincel.strokeText("La palabra secreta", tablero.width / 2 + 85, 175);
+  pincel.fillText("La palabra secreta", tablero.width / 2 + 85, 175);
+  pincel.strokeText(`era ${palabraSecreta}`, tablero.width / 2 + 85, 220);
+  pincel.fillText(`era ${palabraSecreta}`, tablero.width / 2 + 85, 220);
+}
+
+function dibujarFinDelJuego() {
+  pincel.font = "45px Helvetica";
+  pincel.fillStyle = "red";
+  pincel.strokeStyle = "white";
+  pincel.textAlign = "center";
+  pincel.strokeText("Fin Del Juego!!!", tablero.width / 2 + 85, 290);
+  pincel.fillText("Fin Del Juego!!!", tablero.width / 2 + 85, 290);
+  dibujarPalabraSecreta();
 }
 
 function dibujarCaraAhorcadoGanador() {
@@ -45,27 +66,6 @@ function dibujarCaraAhorcadoPerdedor() {
   pincel.moveTo(190, 170);
   pincel.bezierCurveTo(190, 160, 210, 160, 210, 170);
   pincel.stroke();
-}
-
-function dibujarPalabraSecreta() {
-  pincel.font = "40px Helvetica";
-  pincel.fillStyle = "white";
-  pincel.strokeStyle = "blue";
-  pincel.textAlign = "center";
-  pincel.strokeText("La palabra secreta", tablero.width / 2 + 85, 175);
-  pincel.fillText("La palabra secreta", tablero.width / 2 + 85, 175);
-  pincel.strokeText(`era ${palabraSecreta}`, tablero.width / 2 + 85, 220);
-  pincel.fillText(`era ${palabraSecreta}`, tablero.width / 2 + 85, 220);
-}
-
-function dibujarFinDelJuego() {
-  pincel.font = "45px Helvetica";
-  pincel.fillStyle = "red";
-  pincel.strokeStyle = "white";
-  pincel.textAlign = "center";
-  pincel.strokeText("Fin Del Juego!!!", tablero.width / 2 + 85, 290);
-  pincel.fillText("Fin Del Juego!!!", tablero.width / 2 + 85, 290);
-  dibujarPalabraSecreta();
 }
 
 function dibujarMensajePerdiste() {
