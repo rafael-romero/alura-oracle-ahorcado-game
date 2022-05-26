@@ -22,8 +22,14 @@
 </ul><br>
   
 <h3> :confetti_ball: Extras: :confetti_ball: </h3>  
-- La página debe tener un campo para inserción de texto con la finalidad de adicionar nuevas palabras al juego, y un botón "Agregar palabra".   <br><br><br><hr>
++ La página debe tener un campo para inserción de texto con la finalidad de adicionar nuevas palabras al juego, y un botón "Agregar palabra".   <br><br><br><hr>
 
+<h3>Una vista previa :movie_camera: </h3><br>  
+
+![ahocado](https://user-images.githubusercontent.com/95598903/170397511-ab04ff7c-c2d5-401b-9308-324569cfe0a7.gif)
+
+
+<hr>
 <h4>Tecnologias utilizadas :eyes: </h4>
 <ul>
   <li>HTML</li>
