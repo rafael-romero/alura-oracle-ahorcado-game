@@ -33,5 +33,5 @@
 
 <hr>
 ***Author: Rafael Romero*** :wave: <br>  
-:link:  [Link a mi repositorio de GitHub](https://github.com/rafael-romero)  
+:link: <a href="https://github.com/rafael-romero">Link a mi repositorio de GitHub</a> 
 
